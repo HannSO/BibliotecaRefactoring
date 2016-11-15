@@ -35,20 +35,13 @@ public class Program {
                 }
                 switch (bookInput) {
                     case 1:
-                        System.out.println("\n");
-                        System.out.println(" Thank You! Enjoy the book.");
-                        break;
+                        printSuccessfulBookCheckout();
                     case 2:
-                        System.out.println("\n");
-                        System.out.println(" Thank You! Enjoy the book.");
-                        break;
+                        printSuccessfulBookCheckout();
                     case 3:
-                        System.out.println("\n");
-                        System.out.println(" Thank You! Enjoy the book.");
-                        break;
+                        printSuccessfulBookCheckout();
                     case 4:
-                        System.out.println("\n");
-                        System.out.println(" Thank You! Enjoy the book.");
+                        printSuccessfulBookCheckout();
                         break;
                     default:
                         System.out.println("\n");
@@ -94,6 +87,12 @@ public class Program {
                 System.out.println("Enter a valid integer!!");
             }
         }
+    }
+
+    private static void printSuccessfulBookCheckout() {
+        System.out.println("\n");
+        System.out.println(" Thank You! Enjoy the book.");
+        return;
     }
 
     private static void printMovieOptions() {
