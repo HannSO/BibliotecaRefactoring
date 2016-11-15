@@ -15,8 +15,7 @@ public class Program {
             BufferedReader reader = new BufferedReader(inputStream);
             int menuInput = 0;
             try {
-                String value = reader.readLine();
-                menuInput = Integer.parseInt(value);
+                menuInput = Integer.parseInt(reader.readLine());
             } catch (Exception e) {
                 // Do you know what numbers are!!!
                 System.out.println("Enter a valid integer!!");
@@ -65,16 +64,7 @@ public class Program {
                     System.out.println("Please talk to Librarian. Thank you.");
                 }
             } else if (menuInput == 4) {
-                System.out.println(createMovie("Rocky", "John G. Avildsen", "10"));
-                System.out.println(createMovie("Rocky II", "John G. Avildsen", "9"));
-                System.out.println(createMovie("Rocky III", "John G. Avildsen", "8"));
-                System.out.println(createMovie("Rocky IV", "John G. Avildsen", "7"));
-                System.out.println(createMovie("Rocky V", "John G. Avildsen", "8"));
-                System.out.println(createMovie("Drainage", "Francisco Trindade", "N/A"));
-                System.out.println(createMovie("The Shawshank Redemption", "Frank Darabont", "10"));
-                System.out.println(createMovie("The Godfather", "Francis Ford Coppola", "7"));
-                System.out.println(createMovie("Inception", "Frank Darabont", "10"));
-                System.out.println(createMovie("Pulp Fiction", "Quentin Tarantino", "6"));
+                printMovieOptions();
             } else if (menuInput == 5) {
                 clearLogin();
                 System.out.println("Enter your library number");
@@ -104,6 +94,19 @@ public class Program {
                 System.out.println("Enter a valid integer!!");
             }
         }
+    }
+
+    private static void printMovieOptions() {
+        System.out.println(buildMovieString("Rocky", "John G. Avildsen", "10"));
+        System.out.println(buildMovieString("Rocky II", "John G. Avildsen", "9"));
+        System.out.println(buildMovieString("Rocky III", "John G. Avildsen", "8"));
+        System.out.println(buildMovieString("Rocky IV", "John G. Avildsen", "7"));
+        System.out.println(buildMovieString("Rocky V", "John G. Avildsen", "8"));
+        System.out.println(buildMovieString("Drainage", "Francisco Trindade", "N/A"));
+        System.out.println(buildMovieString("The Shawshank Redemption", "Frank Darabont", "10"));
+        System.out.println(buildMovieString("The Godfather", "Francis Ford Coppola", "7"));
+        System.out.println(buildMovieString("Inception", "Frank Darabont", "10"));
+        System.out.println(buildMovieString("Pulp Fiction", "Quentin Tarantino", "6"));
     }
 
     private static void printBookOptions() {
@@ -147,7 +150,7 @@ public class Program {
         savedLibraryNumber = "";
     }
 
-    private static String createMovie(String movieTitle, String movieDirector, String movieRanking) {
+    private static String buildMovieString(String movieTitle, String movieDirector, String movieRanking) {
         return movieTitle + " - Director: " + movieDirector + " Rating: " + movieRanking;
     }
 }
