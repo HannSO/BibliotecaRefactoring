@@ -9,7 +9,7 @@ public class Program {
 
     public static void main(String[] args) {
         while (true) {
-            printOptions();
+            printMenuOptions();
 
             InputStreamReader inputStream = new InputStreamReader(System.in);
             BufferedReader reader = new BufferedReader(inputStream);
@@ -23,10 +23,7 @@ public class Program {
             }
 
             if (menuInput == 1) {
-                System.out.println(" 1. Sweet Valley High vol. 4 by John Travolta ");
-                System.out.println(" 2. eXtreme Programming Explained by Kent Beck ");
-                System.out.println(" 3. How to Win Friends and Influence People by Dale Carnagie ");
-                System.out.println(" 4. How to Cheat at TWU Assignements by Anonymous ");
+                printBookOptions();
             } else if (menuInput == 2) {
                 System.out.println(" Please enter the number of the book you wish to checkout: ");
                 int i2 = 0;
@@ -109,7 +106,14 @@ public class Program {
         }
     }
 
-    private static void printOptions() {
+    private static void printBookOptions() {
+        System.out.println(" 1. Sweet Valley High vol. 4 by John Travolta ");
+        System.out.println(" 2. eXtreme Programming Explained by Kent Beck ");
+        System.out.println(" 3. How to Win Friends and Influence People by Dale Carnagie ");
+        System.out.println(" 4. How to Cheat at TWU Assignements by Anonymous ");
+    }
+
+    private static void printMenuOptions() {
         System.out.println("**********************************************************");
         System.out.println("* Welcome to The Bangalore Public Library System - Biblioteca *");
         System.out.println("**********************************************************");
