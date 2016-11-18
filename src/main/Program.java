@@ -11,6 +11,7 @@ public class Program {
         while (true) {
             MenuOptions menuOption = new MenuOptions();
             menuOption.print();
+            MovieOptions movieOptions = new MovieOptions();
 
             InputStreamReader inputStream = new InputStreamReader(System.in);
             BufferedReader reader = new BufferedReader(inputStream);
@@ -58,7 +59,7 @@ public class Program {
                     System.out.println("Please talk to Librarian. Thank you.");
                 }
             } else if (menuInput == 4) {
-                printMovieOptions();
+                movieOptions.print();
             } else if (menuInput == 5) {
                 clearLogin();
                 System.out.println("Enter your library number");
@@ -96,18 +97,7 @@ public class Program {
         return;
     }
 
-    private static void printMovieOptions() {
-        System.out.println(buildMovieString("Rocky", "John G. Avildsen", "10"));
-        System.out.println(buildMovieString("Rocky II", "John G. Avildsen", "9"));
-        System.out.println(buildMovieString("Rocky III", "John G. Avildsen", "8"));
-        System.out.println(buildMovieString("Rocky IV", "John G. Avildsen", "7"));
-        System.out.println(buildMovieString("Rocky V", "John G. Avildsen", "8"));
-        System.out.println(buildMovieString("Drainage", "Francisco Trindade", "N/A"));
-        System.out.println(buildMovieString("The Shawshank Redemption", "Frank Darabont", "10"));
-        System.out.println(buildMovieString("The Godfather", "Francis Ford Coppola", "7"));
-        System.out.println(buildMovieString("Inception", "Frank Darabont", "10"));
-        System.out.println(buildMovieString("Pulp Fiction", "Quentin Tarantino", "6"));
-    }
+
 
     private static void printBookOptions() {
         System.out.println(" 1. Sweet Valley High vol. 4 by John Travolta ");
@@ -116,7 +106,7 @@ public class Program {
         System.out.println(" 4. How to Cheat at TWU Assignements by Anonymous ");
     }
 
- 
+
     private static boolean validPassword(String password) {
         return "bhaisahab".equals(password);
     }
@@ -135,8 +125,6 @@ public class Program {
         savedLibraryNumber = "";
     }
 
-    private static String buildMovieString(String movieTitle, String movieDirector, String movieRanking) {
-        return movieTitle + " - Director: " + movieDirector + " Rating: " + movieRanking;
-    }
+
 }
 
